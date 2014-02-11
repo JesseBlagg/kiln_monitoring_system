@@ -1,0 +1,15 @@
+I wanted to write some code that would POST a bunch of analog variables to my webserver.  I couldn't find a great POST example, so I muddled through it for a couple hours.  My code is working, so I'm posting it as a reference to anyone in the same spot.  
+
+This example builds and sends a POST request to my server every .5 seconds.  It doesn't bother to look at the response, just barfs data into the server like there's no tomorrow.  I get the sense that not all my requests make it to the server, because the timestamps of my data in the server aren't evenly spaced.  Still!  It's data, going up!
+
+I'm using a wifly shield, but this should work for anyone using the httpclient or Ethernet libraries.
+
+
+Something I didn't know before writing this--POST parameters are serialized just like GET parameters, and they're just listed in the "content" part of the HTTP request.  For example, if you want to POST the parameters "larry"=5, "curly"=6, "moe"=7, your POST content just looks like
+
+larry=5&curly=6&moe=7
+
+how cool is that?
+
+Hope this helps somebody out.  Happy Hacking!
+--enjrolas
